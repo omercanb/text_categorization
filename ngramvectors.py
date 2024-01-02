@@ -27,3 +27,5 @@ def ngram_vectorize(train_texts, train_labels, val_texts):
     selector.fit(x_train, train_labels)
     x_train = selector.transform(x_train).astype('float32')
     x_val = selector.transform(x_val).astype('float32')
+
+    return x_train, x_val

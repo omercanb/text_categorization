@@ -8,6 +8,7 @@ TOP_K = 20000
 MIN_DOCUMENT_FREQUENCY = 2
 TOKEN_MODE = 'word'
 
+
 def ngram_vectorize(train_texts, train_labels, val_texts):
 
     kwargs = {
@@ -28,7 +29,7 @@ def ngram_vectorize(train_texts, train_labels, val_texts):
     x_train = selector.fit_transform(x_train, train_labels)
     x_val = selector.transform(x_val)
 
-    x_train = x_train.astype('float32')
-    x_val = x_val.astype('float32')
+    x_train = x_train.astype('float32').todense()
+    x_val = x_val.astype('float32').todense()
 
     return x_train, x_val

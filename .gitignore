@@ -4,6 +4,10 @@ aclImdb
 # Model Checkpoints
 torch/models
 
+# Directories for unfinished tests
+first
+second
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

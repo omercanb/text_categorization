@@ -5,7 +5,7 @@ aclImdb/
 torch/models
 
 # Directories for unfinished tests
-first/
+.first/
 second/
 
 # Byte-compiled / optimized / DLL files

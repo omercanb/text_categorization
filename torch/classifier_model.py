@@ -1,9 +1,9 @@
 import torch.nn as nn
 
-class SentimentClassifier2(nn.Module):
-    def __init__(self, vocab_size, hidden_dim, num_classes):
+class LSTMSentimentClassifier(nn.Module):
+    def __init__(self, hidden_dim, input_shape,  num_classes):
         super(SentimentClassifier, self).__init__()
-        self.rnn = nn.LSTM(vocab_size, hidden_dim, batch_first=True)
+        self.rnn = nn.LSTM(input_shape, hidden_dim, batch_first=True)
         self.fc = nn.Linear(hidden_dim, num_classes)
         
     def forward(self, x):

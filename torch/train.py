@@ -1,26 +1,23 @@
-import load_data
-import dataset
-import vectorize_data
-import classifier_model
+import os
 
 import torch.nn as nn
 import torch
 import numpy as np
-import os
+from tqdm import tqdm
 
 from torch.utils.data import DataLoader
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from tqdm import tqdm
+import load_data
+import dataset
+import vectorize_data
+import classifier_model
 
 device = 'mps'
 
 (train_texts, train_labels), (test_texts, test_labels) = load_data.load_imdb_sentiment_data('')
 
 x_train, x_test = vectorize_data.ngram_vectorize(train_texts, train_labels, test_texts)
-x_train = x_train.todense()
-x_test = x_test.todense()
-
 
 vocab_size = x_train.shape[1]
 hidden_dim = 128
@@ -71,6 +68,7 @@ for epoch in range(num_epochs):
 
         pbar.set_description(f"Running Accuracy : {train_accuracy:.4f}")
         pbar.update(1)
+
 
     checkpoint = {
         'epoch' : epoch,

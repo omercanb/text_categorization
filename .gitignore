@@ -1,12 +1,12 @@
 # Dataset
-aclImdb
+aclImdb/
 
 # Model Checkpoints
 torch/models
 
 # Directories for unfinished tests
-first
-second
+first/
+second/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
